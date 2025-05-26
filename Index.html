@@ -1,0 +1,181 @@
+<!DOCTYPE html><html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Betânia Studio – Questionário de Requisitos</title>
+  <style>
+    /* Reset básico */
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      font-family: 'Poppins', sans-serif;
+      background-color: #FAF9F6;
+      color: #0B0B0B;
+      line-height: 1.6;
+      padding: 20px;
+    }
+    .container {
+      max-width: 800px;
+      margin: 0 auto;
+      background: #FFFFFF;
+      padding: 30px;
+      border-radius: 8px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+    }
+    h1, h2, h3 {
+      margin-bottom: 10px;
+      color: #0B0B0B;
+    }
+    h1 { font-size: 2em; margin-bottom: 20px; border-bottom: 2px solid #C8A95B; padding-bottom: 10px; }
+    label {
+      display: block;
+      margin-top: 15px;
+      font-weight: 600;
+    }
+    input[type="text"], input[type="email"], textarea, select {
+      width: 100%;
+      padding: 8px;
+      margin-top: 5px;
+      border: 1px solid #CCC;
+      border-radius: 4px;
+      font-size: 1em;
+    }
+    .checkbox-group, .radio-group {
+      margin-top: 5px;
+    }
+    .checkbox-group label, .radio-group label {
+      display: inline-block;
+      margin-right: 15px;
+      font-weight: normal;
+    }
+    .section {
+      margin-bottom: 30px;
+    }
+    button {
+      background-color: #C8A95B;
+      color: #FFFFFF;
+      border: none;
+      padding: 12px 20px;
+      font-size: 1em;
+      border-radius: 4px;
+      cursor: pointer;
+      transition: background 0.3s;
+    }
+    button:hover {
+      background-color: #b29c50;
+    }
+    footer {
+      text-align: center;
+      margin-top: 40px;
+      font-size: 0.9em;
+      color: #585858;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>Betânia Studio – Questionário de Requisitos</h1>
+    <form id="questionnaireForm"><div class="section">
+    <h2>1. Visão Geral</h2>
+    <label>1. Objetivos do App</label>
+    <textarea name="objetivos" rows="2" placeholder="Descreva seus objetivos..."></textarea>
+    
+    <label>2. Problemas atuais</label>
+    <textarea name="problemas" rows="2" placeholder="Quais gargalos deseja eliminar?"></textarea>
+    
+    <label>3. Perfis de acesso</label>
+    <textarea name="perfis" rows="1" placeholder="Quem terá acesso? (ex.: recepcionista)"></textarea>
+  </div>
+
+  <div class="section">
+    <h2>2. Agenda</h2>
+    <label>4. Visualização da agenda</label>
+    <div class="checkbox-group">
+      <label><input type="checkbox" name="agenda_view" value="diaria"> Visão diária</label>
+      <label><input type="checkbox" name="agenda_view" value="semanal"> Visão semanal</label>
+      <label><input type="checkbox" name="agenda_view" value="mensal"> Visão mensal</label>
+      <label><input type="checkbox" name="agenda_view" value="outro"> Outro</label>
+    </div>
+
+    <label>5. Dados indispensáveis em cada agendamento</label>
+    <div class="checkbox-group">
+      <label><input type="checkbox" name="dados_agendamento" value="nome"> Nome do cliente</label>
+      <label><input type="checkbox" name="dados_agendamento" value="servico"> Serviço</label>
+      <label><input type="checkbox" name="dados_agendamento" value="horario"> Horário início/fim</label>
+      <label><input type="checkbox" name="dados_agendamento" value="valor"> Valor cobrado</label>
+      <label><input type="checkbox" name="dados_agendamento" value="observacoes"> Observações</label>
+    </div>
+
+    <label>6. Lembretes automáticos</label>
+    <div class="checkbox-group">
+      <label><input type="checkbox" name="lembretes" value="email"> E-mail</label>
+      <label><input type="checkbox" name="lembretes" value="sms"> SMS / WhatsApp</label>
+      <label><input type="checkbox" name="lembretes" value="push"> Push notification</label>
+      <label><input type="checkbox" name="lembretes" value="nenhum"> Não desejo lembretes</label>
+    </div>
+  </div>
+
+  <div class="section">
+    <h2>3. Gerenciamento de Clientes</h2>
+    <label>7. Dados por cliente</label>
+    <div class="checkbox-group">
+      <label><input type="checkbox" name="dados_cliente" value="nascimento"> Data de nascimento</label>
+      <label><input type="checkbox" name="dados_cliente" value="historico"> Histórico de serviços</label>
+      <label><input type="checkbox" name="dados_cliente" value="fotos"> Fotos antes/depois</label>
+      <label><input type="checkbox" name="dados_cliente" value="notas"> Notas de preferência</label>
+      <label><input type="checkbox" name="dados_cliente" value="contato"> Endereço e telefone</label>
+    </div>
+    <label>8. Filtros ou grupos desejados</label>
+    <textarea name="filtros" rows="1" placeholder="Ex.: VIP, frequentes..."></textarea>
+  </div>
+
+  <div class="section">
+    <h2>4. Catálogo de Serviços</h2>
+    <label>9. Liste serviços atuais</label>
+    <textarea name="servicos" rows="3" placeholder="• Corte – 1h – R$ XX,XX
+
+• Coloração – 2h – R$ XX,XX ..."></textarea> <label>10. Como atualizar valores?</label> <select name="atualizacao_servicos"> <option value="manual">Manual no dashboard</option> <option value="planilha">Importação de planilha</option> <option value="integracao">Integração com sistema</option> </select> </div>
+
+<div class="section">
+    <h2>5. Checklist Diário</h2>
+    <label>11. Itens adicionais do checklist</label>
+    <textarea name="checklist_itens" rows="1" placeholder="Descreva..."> </textarea>
+    <label>12. Tipo de checklist</label>
+    <div class="radio-group">
+      <label><input type="radio" name="tipo_checklist" value="automatico"> Automático ao abrir</label>
+      <label><input type="radio" name="tipo_checklist" value="fixo"> Lista fixa</label>
+    </div>
+  </div>
+
+  <div class="section">
+    <h2>6. Priorização para MVP</h2>
+    <label>13. Top 3 funcionalidades críticas</label>
+    <input type="text" name="mvp1" placeholder="1ª funcionalidade">
+    <input type="text" name="mvp2" placeholder="2ª funcionalidade" style="margin-top: 5px;">
+    <input type="text" name="mvp3" placeholder="3ª funcionalidade" style="margin-top: 5px;">
+  </div>
+
+  <button type="submit">Enviar Respostas</button>
+</form>
+
+  </div>  <footer>
+    &copy; 2025 Betânia Studio
+  </footer>  <script>
+    document.getElementById('questionnaireForm').addEventListener('submit', function(e) {
+      e.preventDefault();
+      const formData = new FormData(this);
+      const entries = {};
+      formData.forEach((value, key) => {
+        if (entries[key]) {
+          // Se já existe, converte em array
+          if (!Array.isArray(entries[key])) entries[key] = [entries[key]];
+          entries[key].push(value);
+        } else {
+          entries[key] = value;
+        }
+      });
+      console.log('Respostas:', entries);
+      alert('Obrigado! Respostas enviadas com sucesso.');
+      this.reset();
+    });
+  </script></body>
+</html>
